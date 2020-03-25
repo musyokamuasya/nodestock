@@ -44,8 +44,10 @@ app.get('/', function (req, res) {
 // Set handlebars POST route
 app.get('/', function (req, res) {
     call_api(function(doneAPI){
+        posted_stuff = req.body.stock_ticker;
         res.render('home', {
-            stock:doneAPI
+            stock:doneAPI,
+            posted_stuff: posted_stuff
         });
     });
  });
